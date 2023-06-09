@@ -16,5 +16,21 @@ spring:
         formatSql: true
     database: mysql
 
+#spring:
+  # cache connection information
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000 # in milliseconds
+
+  # caching configuration
+  cache:
+    redis:
+      cache-null-values: false
+      # use the following two in conjunction
+      use-key-prefix: true
+      key-prefix: library
+      time-to-live: 60000 # in milliseconds
+
 server:
   port: 8001
